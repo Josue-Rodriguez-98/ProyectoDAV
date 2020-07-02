@@ -23,8 +23,24 @@ import TableList from "views/TableList.js";
 import Maps from "views/Maps.js";
 import Upgrade from "views/Upgrade.js";
 import UserPage from "views/UserPage.js";
+import Productos from "views/Productos.jsx";
+import Sucursales from "views/Sucursales.jsx";
 
 var dashRoutes = [
+  {
+    path: "/productos",
+    name: "Productos",
+    icon: "design_app",
+    component: Productos,
+    layout: "/admin",
+  },
+  {
+    path: "/sucursales",
+    name: "Sucursales",
+    icon: "business_bank",
+    component: Sucursales,
+    layout: "/admin",
+  },
   {
     path: "/dashboard",
     name: "Dashboard",
