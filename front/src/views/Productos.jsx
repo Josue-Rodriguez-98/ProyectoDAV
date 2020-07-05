@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Card,
   CardBody,
@@ -19,14 +19,42 @@ import {
 } from "reactstrap";
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
 import { header, products } from "variables/productos";
+import { CartContext } from "providers/CartProvider";
 
 const Productos = () => {
+  const [cart, setCart] = useContext(CartContext);
   const [orderModal, setOrderModal] = useState(false);
   const [queryModal, setQueryModal] = useState(false);
   const [productQuantity, setProductQuantity] = useState(0)
   const [productCode, setProductCode] = useState("");
   const toggleOrderModal = () => setOrderModal(!orderModal);
   const toggleQueryModal = () => setQueryModal(!queryModal);
+  const addProduct = (productId) => {
+    if (cart.findIndex(product => product.id === productId) !== -1) {
+      setCart(cart.map(product => {
+        if (product.id === productId) {
+          return {
+            ...product,
+            items: product.items + 1
+          }
+        }
+        return product;
+      }))
+    } else {
+      const result = products.filter(product => { return product.id === productId })[0];
+      setCart([...cart, { items: 1, ...result }]);
+    }
+  }
+  const removeProduct = (productId) => {
+    if (cart.findIndex(product => product.id === productId) !== -1) {
+      const { items, ...result } = cart.filter(product => { return product.id === productId })[0];
+      const temp = cart.filter(product => { return product.id !== productId });
+      setCart(temp)
+      if (items > 1) {
+        setCart([...temp, { items: items - 1, ...result }])
+      }
+    }
+  }
   return (
     <>
       <PanelHeader size="sm" />
@@ -75,7 +103,23 @@ const Productos = () => {
                           <td key={`${key}C`} className="text-right">
                             Lps. {product.price}
                           </td>
-
+                          <td key={`${key}D`}>
+                            <Button
+                              className="btn-round"
+                              color="success"
+                              onClick={() => { addProduct(product.id) }}
+                            >+</Button>{" "}
+                            <Button
+                              className="btn-round"
+                              color="danger"
+                              onClick={() => { removeProduct(product.id) }}
+                            >-</Button>
+                            <Button
+                              className="btn-round"
+                              color="secondary"
+                              onClick={() => { console.log(cart) }}
+                            >Hols</Button>
+                          </td>
                         </tr>
                       );
                     })}

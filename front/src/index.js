@@ -25,15 +25,18 @@ import "assets/scss/now-ui-dashboard.scss?v1.4.0";
 import "assets/css/demo.css";
 
 import AdminLayout from "layouts/Admin.js";
+import CartProvider from "./providers/CartProvider.jsx";
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Redirect to="/admin/dashboard" />
-    </Switch>
-  </Router>,
+  <CartProvider>
+    <Router history={hist}>
+      <Switch>
+        <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+        <Redirect to="/admin/productos" />
+      </Switch>
+    </Router>
+  </CartProvider>,
   document.getElementById("root")
 );

@@ -1,6 +1,6 @@
-# nextgen-store hecho con :heart:,:coffee: y un poco de :beer:
+# Hecho con :heart:,:coffee: y un poco de :beer:
 
-![License](https://img.shields.io/github/license/Josue-Rodriguez-98/ProyectoDAV/front.svg) ![Issues](https://img.shields.io/github/issues/Josue-Rodriguez-98/ProyectoDAV/front.svg) ![forks](https://img.shields.io/github/forks/Josue-Rodriguez-98/ProyectoDAV/front) ![stars](https://img.shields.io/github/stars/Josue-Rodriguez-98/ProyectoDAV/front) ![size](https://img.shields.io/github/repo-size/Josue-Rodriguez-98/ProyectoDAV/front)
+![License](https://img.shields.io/github/license/Josue-Rodriguez-98/ProyectoDAV.svg) ![Issues](https://img.shields.io/github/issues/Josue-Rodriguez-98/ProyectoDAV.svg) ![forks](https://img.shields.io/github/forks/Josue-Rodriguez-98/ProyectoDAV) ![stars](https://img.shields.io/github/stars/Josue-Rodriguez-98/ProyectoDAV) ![size](https://img.shields.io/github/repo-size/Josue-Rodriguez-98/ProyectoDAVs)
 
 Front end del proyecto de la clase Desarrollo de Aplicaciones de Vanguardia: Crear un software implementando un componente de Vanguardia.
 
