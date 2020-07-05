@@ -21,6 +21,7 @@ import Typography from "views/Typography.js";
 import UserPage from "views/UserPage.js";
 import Productos from "views/Productos.jsx";
 import Sucursales from "views/Sucursales.jsx";
+import Checkout from "views/Checkout.jsx";
 
 var dashRoutes = [
   {
@@ -35,6 +36,13 @@ var dashRoutes = [
     name: "Sucursales",
     icon: "business_bank",
     component: Sucursales,
+    layout: "/admin",
+  },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    icon: "files_paper",
+    component: Checkout,
     layout: "/admin",
   },
   {
