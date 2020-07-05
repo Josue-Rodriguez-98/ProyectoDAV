@@ -12,9 +12,9 @@ import {
 } from "reactstrap";
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
 import { CartContext } from "providers/CartProvider.jsx";
-import { tbody } from "variables/general";
 
 const Checkout = () => {
+  let totalSum = 0;
   const thead = ["Nombre", "Cantidad", "Precio Unitario", "Total"];
   const [cart, setCart] = useContext(CartContext);
   const comfirmOrder = () => {
@@ -45,6 +45,7 @@ const Checkout = () => {
                     </thead>
                     <tbody>
                       {cart.map((product, key) => {
+                        totalSum += (product.price * product.items);
                         return (
                           <tr key={key}>
                             <td key={`${key}A`}>{product.name}</td>
@@ -54,6 +55,12 @@ const Checkout = () => {
                           </tr>
                         );
                       })}
+                      <tr>
+                        <td><b>TOTAL A PAGAR</b></td>
+                        <td><b>-</b></td>
+                        <td><b>-</b></td>
+                        <td><b>Lps. {totalSum}</b></td>
+                      </tr>
                     </tbody>
                   </Table>
                   :
@@ -72,10 +79,8 @@ const Checkout = () => {
                     color="danger"
                     onClick={cancelOrder}
                   >Cancelar</Button>
-
                 </CardFooter> : null
               }
-
             </Card>
           </Col>
         </Row>

@@ -22,6 +22,7 @@ import UserPage from "views/UserPage.js";
 import Productos from "views/Productos.jsx";
 import Sucursales from "views/Sucursales.jsx";
 import Checkout from "views/Checkout.jsx";
+import AdminProductos from "views/AdminProductos.jsx";
 
 var dashRoutes = [
   {
@@ -29,6 +30,13 @@ var dashRoutes = [
     name: "Productos",
     icon: "design_app",
     component: Productos,
+    layout: "/admin",
+  },
+  {
+    path: "/admin-productos",
+    name: "Admin. Productos",
+    icon: "design_app",
+    component: AdminProductos,
     layout: "/admin",
   },
   {

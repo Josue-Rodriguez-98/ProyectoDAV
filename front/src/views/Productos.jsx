@@ -114,11 +114,6 @@ const Productos = () => {
                               color="danger"
                               onClick={() => { removeProduct(product.id) }}
                             >-</Button>
-                            <Button
-                              className="btn-round"
-                              color="secondary"
-                              onClick={() => { console.log(cart) }}
-                            >Hols</Button>
                           </td>
                         </tr>
                       );
