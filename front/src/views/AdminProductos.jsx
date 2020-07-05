@@ -36,6 +36,35 @@ const AdminProductos = () => {
       quantity: productQuantity,
     }
     setList([...list, newProduct]);
+    const endpoint = "localhost";
+    const port = 6969;
+    
+    const ws = new WebSocket(`ws://${endpoint}:${port}`);
+
+    const dummyTransaction = {
+      transaction: {
+        type: 1,
+        prodId: newProduct.id,
+      },
+      publicKey: "publicKey",
+      idClient: "uid",
+      hash: "hash",
+      transId: "transuid",
+    }
+
+    ws.addEventListener("open", function () {
+      console.log("Sucursal conectada");
+    
+      ws.addEventListener("message", (m) => {
+        console.log(m.toString());
+      });
+    
+      const sendData = (data) => {
+        ws.send(data);
+      };
+    
+      sendData(JSON.stringify({ data: 1 }));
+    })
     setProductName("");
     setProductQuantity(0);
     setProductPrice(0.0);
