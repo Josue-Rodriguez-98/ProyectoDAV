@@ -15,10 +15,6 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Notifications from "views/Notifications.js";
-import Icons from "views/Icons.js";
-import Typography from "views/Typography.js";
-import UserPage from "views/UserPage.js";
 import Productos from "views/Productos.jsx";
 import Sucursales from "views/Sucursales.jsx";
 import Checkout from "views/Checkout.jsx";
@@ -53,7 +49,7 @@ var dashRoutes = [
     component: Checkout,
     layout: "/admin",
   },
-  {
+  /*{
     path: "/icons",
     name: "Icons",
     icon: "design_image",
@@ -80,6 +76,6 @@ var dashRoutes = [
     icon: "design-2_ruler-pencil",
     component: Typography,
     layout: "/admin",
-  },
+  },*/
 ];
 export default dashRoutes;
